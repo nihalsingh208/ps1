@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Responsive</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="navbar">
+            <img src="Images/logo.png" class="logo">
+
+            <!-- The <nav> tag is an HTML5 element that is used to define a section of a webpage that contains navigation links, menus, or any other navigation-related content. -->
+
+            <!-- The <nav> element is typically used to wrap around a list of links that provide navigation to different parts of a website or application, such as a main navigation menu, a breadcrumb trail, or a list of related links. -->
+
+            <nav>
+                <ul id="menuList">
+                    <li> <a href="#">Game Controllers</a></li>
+                    <li> <a href="#">VR Accessories</a></li>
+                    <li> <a href="#">Media Remotes</a></li>
+                    <li> <a href="#">Others</a></li>
+                </ul>
+            </nav>
+            <!-- By clicking on the menu imaage togglemenue() function will be called  -->
+            <img src="Images/menu.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+        <div class="row">
+            <div class="call-1">
+                <h2>PS4 V2<br>Dualschok 4</h2>
+                <h3>Wireless Controller for PlayStation 4</h3>
+                <p>(Compatible/Generic)</p>
+                <h4>$32.50</h4>
+                <button type="button">Buy Now <img src="Images/arrow.png" alt=""> </button>
+            </div>
+            <div class="call-2">
+                <img src="Images/controller.png" class="controller">
+                <div class="color-box"></div>
+                <div class="add-btn">
+                    <img src="Images/add.png" alt="">
+
+                    <!-- The "small" tag in HTML is used to indicate that the enclosed text is smaller in size and less important than the surrounding text. -->
+
+                    <p><small>Add to Cart</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="social-links">
+            <img src="Images/fb.png" alt="">
+            <img src="Images/ig.png" alt="">
+            <img src="Images/tw.png" alt="">
+        </div>
+    </div>
+
+    <!-- Java Script -->
+
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "130px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.conatiner {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+
+    /* By default,the width and height of an element is calculated like this:
+
+    width + padding + border = actual width of an element 
+    height + padding + border = actual height of an element */
+
+    /* That means if we add padding and border than the actuall height/width will increase. To solve this problem we use box-sizing: border-box. This property ensures you that the actual height and width of the element will remain same as you have set them, including padding and border. */
+
+    /* Increasing padding will not affect the actual height and width of the element */
+
+    /* Remember that the padding should be in limit respect to the height and width of the conatiner. If padding is very large the  box-sizing: border-box will not work*/
+
+    /* In this example, the .conatiner element will have a total width of 100%, including the 8% of padding on each side. */
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* NavBar  */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50Px;
+    cursor: pointer;
+    margin: 20px, 0;
+}
+
+.menu-icon {
+    width: 25px;
+    cursor: pointer;
+    /* To hide the menu icon */
+    display: none;
+}
+
+nav {
+
+    /* flex: 1 is a CSS shorthand property that sets three individual properties of a flex item:
+
+    flex-grow
+    flex-shrink
+    flex-basis
+    Here's a breakdown of what each of these properties does:
+
+    flex-grow: This property specifies how much the flex item should grow in relation to other flex items within the same container. A value of 1 means the item will grow proportionally to the available space. A value of 0 means the item will not grow.
+
+    flex-shrink: This property specifies how much the flex item should shrink in relation to other flex items within the same container when there is not enough space. A value of 1 means the item will shrink proportionally to the available space. A value of 0 means the item will not shrink.
+
+    flex-basis: This property specifies the initial size of the flex item before any remaining space is distributed among the flex items in the container.
+
+    So, when flex: 1 is applied to a flex item, it means that the item will grow and shrink proportionally to other items in the container and that its initial size will be determined by the remaining space in the container after all other items have been sized. */
+
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #ff5ea2;
+}
+
+/* Row */
+
+.row {
+    display: flex;
+
+    /* All the items in the flex will be equally spaced excluding the space between 1st iteam / Last item and the border  */
+
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.call-1 {
+
+    /* In a flex container, the flex-basis property determines the default size of a flex item along the main axis. The value of 40% in this case means that the initial size of the flex item should be 40% of the available space along the main axis. */
+
+    flex-basis: 40%;
+
+    /* Setting position relative for call-1 after and will also be used in media query inside nav ul */
+
+    position: relative;
+    margin-left: 50px;
+}
+
+.call-1 h2 {
+    font-size: 54px;
+}
+
+.call-1 h3 {
+    font-size: 26px;
+    color: #707070;
+    font-weight: 100;
+
+    /* The code "margin: 20px 0 10px;" sets the top margin to 20 pixels, the right and left margins to 0, and the bottom margin to 10 pixels. */
+
+    /* Short-Hand Property of top, right, left and bottom  */
+
+    margin: 20px 0 10px;
+}
+
+.call-1 p {
+    font-size: 16px;
+    color: #b7b7b7;
+    font-weight: 100;
+}
+
+.call-1 h4 {
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+/* Button  */
+
+button {
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+
+    outline: none;
+
+    /*It is is a CSS property that removes the default outline that appears around an HTML element when it is focused. The outline is a visible border around an element that helps to indicate which element currently has keyboard focus.
+    
+    When an HTML element receives focus (e.g., when a user clicks on it or navigates to it using the keyboard),the browser typically applies a default outline around the element to provide a visual indication of its focus state. However,
+    the default outline can sometimes be distracting or interfere with the design of the page.
+    
+    To remove the default outline,
+    you can use the outline property in CSS and set its value to none outline: none; */
+
+    color: #fff;
+    background: linear-gradient(to right, #fb5283, #ff3527);
+    border-radius: 6px;
+    cursor: pointer;
+
+    /* This is a CSS code that defines a transition effect for the "width" property of an element. The "width" property determines the width of an element, and the "transition" property specifies the duration and type of transition effect to apply when the value of the "width" property changes */
+
+    transition: width 0.5s;
+}
+
+/* This CSS code defines a style rule for a button element that contains an img element. The first rule sets the width of the img element to 30 pixels and hides it by setting display: none;. */
+
+button img{
+    width: 30px;
+    /* Image will not be displayed on the button  */
+    display: none;
+}
+
+/* The below code applies a style to the img element when the button is being hovered over by the mouse cursor. The rule sets display: block; to show the img element. */
+
+button:hover img{
+    display: block;
+}
+
+
+/* The align-items property is set to center, which centers the child elements of the button vertically within the button container.
+
+The justify-content property is set to space-between, which distributes the child elements of the button evenly along the horizontal axis, with equal space between them. */
+
+
+/* Below code create a button that expands in width when hovered over, and positions its child elements vertically centered and spaced evenly along the horizontal axis.  */
+
+button:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.call-1::after{
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: linear-gradient(to right, #ff469f, #ff6062);
+
+    /* It will change its position as per call-1. Because we have set its display: relative; */
+
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+
+.call-2{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+.call-2 .controller{
+    width: 90%;
+}
+
+.color-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to right, #fb5283, #ff3527);
+    border-radius: 20px 0 0 20px;
+    height: 100%;
+    width: 80%;
+    z-index: -1;
+
+    /* To move the box in right side we have used the below code */
+    transform: translateX(150px);
+
+}
+
+/* Button  */
+
+.add-btn img{
+    width: 35px;
+    margin-bottom: 5px;
+}
+
+.add-btn{
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+/* Social Links */
+
+.social-links img{
+    height: 13px;
+    margin: 20px;
+    cursor: pointer;    
+}
+
+.social-links{
+    text-align: center;
+}
+
+/* If the window size is lss than 700px below style sheet will be applied */
+@media only screen and (max-width : 700px)
+{
+    nav ul{
+        width: 100%;
+        background: linear-gradient(to right, #fb5283, #ff3527);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+        color: #fff;
+    }
+    .menu-icon{
+
+        /* To make in-visible our logo we have written the below code  */
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .row{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+    }
+    .call-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .call-2 .controller{
+        width: 77%;
+    }
+    .color-box{
+        transform: translateX(75px); 
+    }
+    .call-1{
+        flex-basis: 100%;
+
+    }
+    .call-2 h2{
+        font-size: 35px;
+    }
+    .call-2 h3{
+        font-size: 15px;
+    }
+}
